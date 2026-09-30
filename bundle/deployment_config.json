@@ -1,0 +1,22 @@
+{
+  "architecture": "Standalone Hybrid CNN-Transformer",
+  "model_class": "StandaloneHybridCNNTransformer",
+  "model_init_kwargs": {
+    "in_channels": 1,
+    "num_classes": 1
+  },
+  "uses_dino": false,
+  "dino_model": null,
+  "dino_out_channels": null,
+  "normalization_mean": 64.0,
+  "normalization_std": 32.0,
+  "speckle_filter": "median",
+  "threshold": 0.5,
+  "min_area_pixels": 400,
+  "patch_size": 256,
+  "patch_overlap": 32,
+  "weights_file": "model_weights.pt",
+  "loss_function": "EdgeGuidedUncertaintyLoss",
+  "loss_lambda1_edge": 0.4,
+  "loss_lambda2_uncertainty": 0.35
+}

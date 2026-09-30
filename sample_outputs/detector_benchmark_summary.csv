@@ -1,0 +1,2 @@
+detector,dice,iou,precision,recall,false_alarm_objects
+otsu_global,0.9552161353296055,0.9144279217810983,0.9168926773087801,0.9970130964598779,0.0

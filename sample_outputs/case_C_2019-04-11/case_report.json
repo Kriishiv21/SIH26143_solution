@@ -1,0 +1,97 @@
+{
+  "case_id": "case_C_2019-04-11",
+  "label": "Port Said C -- 11 Apr 2019",
+  "provenance": {
+    "mode": "DEMO",
+    "forcing_source": "hardcoded",
+    "ais_source": "SYNTHETIC background traffic",
+    "sar_source": "DEMO_SYNTHETIC",
+    "warnings": [
+      "DEMO: synthetic SAR scene, hard-coded forcing, synthetic AIS -- validates plumbing, not real-world accuracy.",
+      "Acquisition time is ASSUMED (date supplied, pass time hard-coded).",
+      "AIS is SYNTHETIC. Set cfg.ais.source='csv' + csv_path for the real feed.",
+      "Synthetic ground truth injected (culprit + decoys + dark-gap vessel) for self-validation. It is generated with the same forcing/model used to rank it (an 'inverse crime'): it tests the plumbing and ranking logic, not physical accuracy."
+    ],
+    "acquisition_time": "2019-04-11 03:52:00",
+    "time_source": "ASSUMED (date supplied; pass time hard-coded for DEMO)",
+    "forcing": "HARD-CODED (synthetic) wind 5.0 m/s FROM 315.0 deg, current 0.15 m/s TOWARD 70.0 deg"
+  },
+  "observation": {
+    "detector": "otsu",
+    "area_km2": 2.456,
+    "center_lon": 32.39036,
+    "center_lat": 31.31487,
+    "major_km": 2.52,
+    "minor_km": 1.25,
+    "orientation_deg": 113.8,
+    "n_components": 1
+  },
+  "detection": {
+    "selected": "otsu",
+    "used": "otsu",
+    "fell_back": false,
+    "inter_detector_iou": null,
+    "per_detector": {
+      "otsu": {
+        "n_pixels": 287
+      }
+    },
+    "gt_metrics": {
+      "otsu": {
+        "dice": 0.9433272394863925,
+        "iou": 0.8927335640107518,
+        "precision": 0.8989547038296204,
+        "recall": 0.9923076923038758,
+        "false_alarm_objects": 0
+      }
+    }
+  },
+  "source": {
+    "lon": 31.985338829042618,
+    "lat": 31.36828943067526,
+    "bbox_95": [
+      31.913019200716374,
+      31.2581031297854,
+      32.382886301197075,
+      31.468913049499502
+    ],
+    "spread_km": 12.923485526693856,
+    "hours_back": 48.0
+  },
+  "conclusion": {
+    "level": "AMBIGUOUS_SHORTLIST",
+    "top_mmsi": 999000001,
+    "top_name": "CULPRIT_999000001",
+    "top_confidence": 0.695,
+    "margin_to_second": 0.004,
+    "n_candidates": 11,
+    "n_within_ambiguity_margin": 3,
+    "shortlist": [
+      999000001,
+      999000004,
+      999000002
+    ],
+    "text": "Ranking score for further investigation (evidence weight), not a probability of guilt; confirm with additional evidence (e.g. sampling, satellite re-tasking, port-state records)."
+  },
+  "engine_check": {},
+  "self_validation": {
+    "culprit_rank": 1,
+    "decoy_ranks": {
+      "999000002": 3,
+      "999000003": null
+    },
+    "dark_gap_rank": 2,
+    "culprit_is_top1": true,
+    "release_time_error_min": 0.0,
+    "release_position_error_km": 0.8807066870600108,
+    "source_cloud_error_km_at_true_release_time": 1.396260404776531,
+    "true_source_inside_cloud_central_90pct": true
+  },
+  "stage1_ais_model": {
+    "mean_error_m": {
+      "CV": 158.26290893554688,
+      "MLP": 166.47698974609375
+    },
+    "selected": "CV"
+  }
+}

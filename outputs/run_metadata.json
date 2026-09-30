@@ -1,0 +1,78 @@
+{
+  "detector_selected": "deeplab",
+  "detector_reason": "No labelled benchmark data -> trusting the trained model (its own test metrics are in the bundle config)  [benchmark data: none available]",
+  "deeplab_available": true,
+  "deeplab_unavailable_reason": "",
+  "bundle_validation": {
+    "ok": true,
+    "architecture": "Standalone Hybrid CNN-Transformer",
+    "test_metrics": null,
+    "device": "cpu",
+    "checks": [
+      {
+        "case": "smaller_than_tile/uint8-like",
+        "ok": true,
+        "shape": [
+          96,
+          130
+        ]
+      },
+      {
+        "case": "smaller_than_tile/float-with-nan",
+        "ok": true,
+        "shape": [
+          96,
+          130
+        ]
+      },
+      {
+        "case": "non_square/uint8-like",
+        "ok": true,
+        "shape": [
+          300,
+          517
+        ]
+      },
+      {
+        "case": "non_square/float-with-nan",
+        "ok": true,
+        "shape": [
+          300,
+          517
+        ]
+      },
+      {
+        "case": "exact_tile/uint8-like",
+        "ok": true,
+        "shape": [
+          256,
+          256
+        ]
+      },
+      {
+        "case": "exact_tile/float-with-nan",
+        "ok": true,
+        "shape": [
+          256,
+          256
+        ]
+      },
+      {
+        "case": "multi_tile/uint8-like",
+        "ok": true,
+        "shape": [
+          700,
+          700
+        ]
+      },
+      {
+        "case": "multi_tile/float-with-nan",
+        "ok": true,
+        "shape": [
+          700,
+          700
+        ]
+      }
+    ]
+  }
+}

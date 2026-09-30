@@ -1,0 +1,113 @@
+{
+  "mode": "REAL",
+  "seed": 20190405,
+  "output_dir": "c:\\Users\\fkrii\\OneDrive\\Desktop\\SIH26143_merged_pipeline\\proj\\outputs",
+  "forcing": {
+    "source": "hardcoded",
+    "hardcoded_wind_speed_ms": 5.0,
+    "hardcoded_wind_dir_from_deg": 315.0,
+    "hardcoded_current_speed_ms": 0.15,
+    "hardcoded_current_dir_to_deg": 70.0,
+    "wind_path": null,
+    "current_path": null,
+    "current_glob": "Day_*.csv",
+    "current_verified_surface": false,
+    "windage_frac": 0.03,
+    "windage_range": [
+      0.01,
+      0.04
+    ],
+    "allow_time_clamp": false
+  },
+  "detection": {
+    "bundle_dir": "c:\\Users\\fkrii\\OneDrive\\Desktop\\SIH26143_merged_pipeline\\proj\\bundle",
+    "mode": "auto",
+    "selection_margin": 0.02,
+    "min_area_km2": 0.05,
+    "otsu_smooth_px": 1.5,
+    "prefer_when_tied": "deeplab",
+    "input_scaling": "auto",
+    "benchmark_dataset_root": null,
+    "benchmark_max_samples": 30,
+    "run_bundle_validation": true
+  },
+  "ais": {
+    "source": "synthetic",
+    "csv_path": null,
+    "column_map": {},
+    "n_synthetic_vessels": 60,
+    "inject_demo_culprit": true,
+    "resample_minutes": 6,
+    "gap_segment_minutes": 60,
+    "implausible_speed_kn": 50.0,
+    "history_steps": 12,
+    "max_vessel_speed_kn": 25.0,
+    "stage1_models": [
+      "MLP",
+      "RNN",
+      "MLP+RNN"
+    ],
+    "stage1_max_sequences": 6000,
+    "stage1_rnn_epochs": 25,
+    "n_folds": 4
+  },
+  "physics": {
+    "backtrack_hours": 72.0,
+    "min_release_age_hours": 0.0,
+    "n_particles": 600,
+    "dt_min": 15.0,
+    "horizontal_diffusivity_m2s": 10.0,
+    "wind_speed_rel_sigma": 0.15,
+    "wind_dir_sigma_deg": 15.0,
+    "current_speed_rel_sigma": 0.2,
+    "current_dir_sigma_deg": 15.0,
+    "backtrack_engine": "numpy",
+    "forward_engine": "numpy",
+    "pygnome_python": null,
+    "oil_types": [
+      "GENERIC MEDIUM CRUDE",
+      "GENERIC HEAVY FUEL OIL",
+      "GENERIC DIESEL"
+    ],
+    "age_grid_hours": [
+      6,
+      12,
+      24,
+      36,
+      48,
+      72
+    ],
+    "run_oil_age_screening": false
+  },
+  "attribution": {
+    "top_n_for_twin": 8,
+    "z_gate": 3.0,
+    "sigma_min_km": 1.0,
+    "ais_position_sigma_km": 0.2,
+    "fusion_weights": {
+      "anomaly": 0.2,
+      "attribution": 0.45,
+      "digital_twin": 0.35
+    },
+    "twin_weights": {
+      "iou": 0.3,
+      "centroid": 0.7
+    },
+    "strong_score": 0.7,
+    "strong_margin": 0.15,
+    "moderate_score": 0.5,
+    "twin_model_error_frac": 0.1,
+    "ambiguity_margin": 0.05
+  },
+  "real_cases": [
+    {
+      "case_id": "sample1_oil",
+      "label": "sample1_oil",
+      "sar_path": "c:\\Users\\fkrii\\OneDrive\\Desktop\\SIH26143_merged_pipeline\\proj\\input\\sample1_oil.tif",
+      "acquisition_time": "2000-01-01 00:00:00",
+      "polarisation_band": 1,
+      "units": "db",
+      "ais_csv": null
+    }
+  ]
+}

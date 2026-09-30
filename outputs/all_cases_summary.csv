@@ -1,0 +1,2 @@
+case_id,sar_source,ais_source,detector_used,area_km2,source_lat,source_lon,source_spread_km,n_candidates,lead_level,top_mmsi,top_confidence,selfcheck_culprit_rank,selfcheck_culprit_is_top1
+sample1_oil,REAL_GEOTIFF,SYNTHETIC background traffic,deeplab,5.2,55.3463,3.1764,18.4,19,AMBIGUOUS_SHORTLIST,999000001,0.713,1,True

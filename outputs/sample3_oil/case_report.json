@@ -1,0 +1,95 @@
+{
+  "case_id": "sample3_oil",
+  "label": "sample3_oil",
+  "provenance": {
+    "mode": "REAL",
+    "forcing_source": "hardcoded",
+    "ais_source": "SYNTHETIC background traffic",
+    "sar_source": "REAL_GEOTIFF",
+    "warnings": [
+      "AIS is SYNTHETIC. Set cfg.ais.source='csv' + csv_path for the real feed.",
+      "Synthetic ground truth injected (culprit + decoys + dark-gap vessel) for self-validation. It is generated with the same forcing/model used to rank it (an 'inverse crime'): it tests the plumbing and ranking logic, not physical accuracy."
+    ],
+    "acquisition_time": "2000-01-01 00:00:00",
+    "time_source": "user_supplied",
+    "forcing": "HARD-CODED (synthetic) wind 5.0 m/s FROM 315.0 deg, current 0.15 m/s TOWARD 70.0 deg"
+  },
+  "observation": {
+    "detector": "deeplab",
+    "area_km2": 2.671,
+    "center_lon": 5.97643,
+    "center_lat": 55.40813,
+    "major_km": 17.75,
+    "minor_km": 11.15,
+    "orientation_deg": 10.0,
+    "n_components": 96
+  },
+  "detection": {
+    "selected": "deeplab",
+    "used": "deeplab",
+    "fell_back": false,
+    "inter_detector_iou": 0.27891704869045625,
+    "per_detector": {
+      "deeplab": {
+        "n_pixels": 539501
+      },
+      "otsu": {
+        "n_pixels": 1743380
+      }
+    },
+    "gt_metrics": null
+  },
+  "source": {
+    "lon": 5.061793897459024,
+    "lat": 55.48710072940475,
+    "bbox_95": [
+      4.8970593640158455,
+      55.32377145483605,
+      5.973362419436365,
+      55.6185013896663
+    ],
+    "spread_km": 18.93011468835959,
+    "hours_back": 72.0
+  },
+  "conclusion": {
+    "level": "AMBIGUOUS_SHORTLIST",
+    "top_mmsi": 999000001,
+    "top_name": "CULPRIT_999000001",
+    "top_confidence": 0.713,
+    "margin_to_second": 0.009,
+    "n_candidates": 24,
+    "n_within_ambiguity_margin": 6,
+    "shortlist": [
+      999000001,
+      655385244,
+      656679464,
+      999000004,
+      444331407,
+      999000002
+    ],
+    "text": "Ranking score for further investigation (evidence weight), not a probability of guilt; confirm with additional evidence (e.g. sampling, satellite re-tasking, port-state records)."
+  },
+  "engine_check": {},
+  "self_validation": {
+    "culprit_rank": 1,
+    "decoy_ranks": {
+      "999000002": 6,
+      "999000003": null
+    },
+    "dark_gap_rank": 4,
+    "culprit_is_top1": true,
+    "release_time_error_min": 0.0,
+    "release_position_error_km": 0.795751626282146,
+    "source_cloud_error_km_at_true_release_time": 1.0666846134782022,
+    "true_source_inside_cloud_central_90pct": true
+  },
+  "stage1_ais_model": {
+    "mean_error_m": {
+      "CV": 160.54373168945312,
+      "MLP": 164.36387634277344,
+      "RNN": 161.7160186767578,
+      "MLP+RNN": 160.66818237304688
+    },
+    "selected": "CV"
+  }
+}
