@@ -18,11 +18,6 @@
 u = east, v = north (m/s); bearings clockwise from north. **Wind = direction it blows FROM**, **current/drift = direction TOWARD**.
 Files store components -> used as-is. Oil velocity = current + windage x wind10 (vector); windage 3 % (ensemble 1-4 %).
 
-## DEMO -> REAL
-Uncomment the REAL block in notebook cell 2 (or fill `cfg.real_cases` / `cfg.forcing.*` / `cfg.ais.*`).
-SAR must be a georeferenced GeoTIFF with an acquisition time (tag, sidecar json, or explicit) -- never invented.
-Forcing must cover the scene area and `backtrack_hours` before the pass, else `ForcingCoverageError`.
-
 ## Verification status
 | Component | Status |
 |---|---|
